@@ -159,14 +159,17 @@ class ContentDelivery extends React.Component
                         <InputMask mask="+7 (999) 999-99-99" placeholder="+7 (___) ___-__-__"/>
                     </div>
                 </div>
-                <div className="containerComponent">
-                    <label>Адрес доставки</label>
-                    <input className={this.state.textAddressCorrect ? "" : "test"} value={textAddress} placeholder="Город, улица, дом" onChange={(e) => this.changeAddress(e)}/>
-                    <small className={this.state.textAddressCorrect ? "hideErrorText" : "showErrorText"}>Введите адрес доставки</small>
-                </div>
-                <div className="containerComponent">
-                    <label>Комментарий</label>
-                    <textarea value={textComment} onChange={(e) => this.changeComment(e)}> </textarea>
+                    <div className="containerComponent containerInputAddress">
+                        <label>Адрес доставки</label>
+                        <input className={this.state.textAddressCorrect ? "" : "test"} value={textAddress} placeholder="Город, улица, дом" onChange={(e) => this.changeAddress(e)}/>
+                        <small className={this.state.textAddressCorrect ? "hideErrorText" : "showErrorText"}>Введите адрес доставки</small>
+                    </div>
+                    <div className="containerComponent containerInputComment">
+                        <label>Комментарий</label>
+                        <textarea value={textComment} onChange={(e) => this.changeComment(e)}> </textarea>
+                    </div>
+                <div className="containerButtonCheckout">
+                    <button className="checkout">Оформить заказ</button>
                 </div>
             </div>
         );
@@ -207,7 +210,6 @@ class ContentPickup extends React.Component
     {
         const markerComponent = this.state.markers.map((marker, index) =>
         {
-            console.log(marker.lat);
             return (<MarkerGoogleMap  key={index} lat={marker.lat} lng={marker.lng} />)
         });
 
