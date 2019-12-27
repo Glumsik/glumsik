@@ -73,41 +73,7 @@ import './style.css'
 // }
 //
 //
-// class Pickup extends React.Component
-// {
-//     render()
-//     {
-//         return(
-//             <div className="contentContainer">Pickup</div>
-//         );
-//     }
-// }
-//
-//
-//
-// class App extends React.Component
-// {
-//     render()
-//     {
-//       const tabs =
-//           [
-//               {
-//                   name: "Доставка",
-//                   content: <Delivery/>
-//               },
-//               {
-//                   name: "Самовывоз",
-//                   content: <Pickup/>
-//               }
-//           ];
-//
-//       return(
-//           <div className="containerInner">
-//               <Tabs tabs={tabs}/>
-//           </div>
-//         );
-//     }
-// }
+
 
 
 class Tab extends React.Component
@@ -184,22 +150,22 @@ class ContentDelivery extends React.Component
             <div className={this.props.showContent ? "showContent" : "hideContent"}>
                 <div className="containerFirst">
                     <div className="containerComponent">
-                        <small>ФИО</small>
-                        <input value={textName} placeholder="Только кириллица" onChange={(e) => this.changeName(e)} />
+                        <label>ФИО</label>
+                        <input className={this.state.textNameCorrect ? "" : "test"} value={textName} placeholder="Только кириллица" onChange={(e) => this.changeName(e)} />
                         <small className={this.state.textNameCorrect ? "hideErrorText" : "showErrorText"}>Введите корректное имя.</small>
                     </div>
                     <div className="containerComponent">
-                        <small>Телефон</small>
+                        <label>Телефон</label>
                         <InputMask mask="+7 (999) 999-99-99" placeholder="+7 (___) ___-__-__"/>
                     </div>
                 </div>
                 <div className="containerComponent">
-                    <small>Адрес доставки</small>
-                    <input className="test" value={textAddress} placeholder="Город, улица, дом" onChange={(e) => this.changeAddress(e)}/>
+                    <label>Адрес доставки</label>
+                    <input className={this.state.textAddressCorrect ? "" : "test"} value={textAddress} placeholder="Город, улица, дом" onChange={(e) => this.changeAddress(e)}/>
                     <small className={this.state.textAddressCorrect ? "hideErrorText" : "showErrorText"}>Введите адрес доставки</small>
                 </div>
                 <div className="containerComponent">
-                    <small>Комментарий</small>
+                    <label>Комментарий</label>
                     <textarea value={textComment} onChange={(e) => this.changeComment(e)}> </textarea>
                 </div>
             </div>
@@ -208,7 +174,7 @@ class ContentDelivery extends React.Component
 }
 
 
-const AnyReactComponent = () => <div className="marker"></div>;
+const MarkerGoogleMap = () => <div className="marker" onClick={() => console.log("You clicked me!")} ></div>;
 
 
 class ContentPickup extends React.Component
@@ -232,37 +198,32 @@ class ContentPickup extends React.Component
                         {lat: 55.980673, lng: 37.168749},
                         {lat: 55.998212, lng:  37.225081}
                     ],
-                checkBoxSelected: "radio-1",
+                checkBoxSelected: "null",
             }
     }
 
 
     render()
     {
-        // const markerComponent = this.state.markers.map((marker, index) =>
-        // {
-        //     console.log(this.state.markers.lat)
-        //     return (<AnyReactComponent  key={index} lat={this.state.markers.lat} lng={this.state.markers.lng}></AnyReactComponent>)
-        // });
+        const markerComponent = this.state.markers.map((marker, index) =>
+        {
+            console.log(marker.lat);
+            return (<MarkerGoogleMap  key={index} lat={marker.lat} lng={marker.lng} />)
+        });
 
-        // console.log(markerComponent)
         return (
             <div className={this.props.showContent ? "showContent" : "hideContent"}>
-                {/*<div style={{ height: '100%', width: '100%' }}>*/}
-                {/*    <GoogleMapReact defaultCenter={this.props.center} defaultZoom={this.props.zoom}>*/}
-                {/*        /!*{markerComponent}*!/*/}
-                {/*        <AnyReactComponent*/}
-                {/*            lat={55.998212}*/}
-                {/*            lng={37.225081}*/}
-                {/*            text="My Marker"*/}
-                {/*        />*/}
-                {/*    </GoogleMapReact>*/}
-                {/*</div>*/}
                 <div>
                     <input type='radio'  value='radio-1'
                            checked={this.state.checkBoxSelected === 'radio-1'} onChange={(e) => this.setState({ checkBoxSelected: e.target.value })} />
                     <input type='radio'  value='radio-2'
                            checked={this.state.checkBoxSelected === 'radio-2'} onChange={(e) => this.setState({ checkBoxSelected: e.target.value })} />
+                </div>
+
+                <div style={{ height: '90%', width: '100%' }}>
+                    <GoogleMapReact defaultCenter={this.props.center} defaultZoom={this.props.zoom}>
+                        {markerComponent}
+                    </GoogleMapReact>
                 </div>
             </div>
         );
