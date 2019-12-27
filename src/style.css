@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+body
+{
+    background-color: #E5E5E5;
+}
+.containerInner
+{
+    width: 800px;
+    height: 100%;
+    background-color: transparent;
+}
+
+.containerTabs
+{
+    /*width: 220px;*/
+    display: flex;
+    /*justify-content: space-between;*/
+}
+
+.hideContent
+{
+    display: none;
+}
+
+.showContent
+{
+    height: 500px;
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 0 0 5px 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.showErrorText
+{
+
+}
+
+.hideErrorText
+{
+    display: none;
+}
+
+textarea
+{
+    resize: none;
+}
+
+.tab
+{
+    width: 152px;
+    height: 48px;
+    margin: 0 8px 0 0;
+    border-radius: 5px 5px 0 0;
+    font-family: Roboto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.showTab
+{
+    cursor: default;
+    background-color: #FFFFFF;
+    color: #215BF0;
+}
+
+.hideTab
+{
+    cursor: pointer;
+    background-color: #EDEEEF;
+    color: #999999;
+}
+
+.containerComponent
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.containerFirst
+{
+    display: flex;
+    /*justify-content: center;*/
+}
+
+
+.test
+{
+    width: 100%;
+}
+
+
+.marker
+{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    background-image: URL("./location-pin.svg");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
