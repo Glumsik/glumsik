@@ -176,9 +176,40 @@ textarea
     max-height: 50px;
     max-width: 150px;
     min-width: 100px;
+    cursor: pointer;
 }
 
 .checkout:focus
 {
     outline: none;
+}
+
+
+
+.checkout:hover
+{
+    background-color: green;
+}
+
+.checkout:active
+{
+    background-color: red;
+}
+
+.checkoutOff
+{
+    height: 90%;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100%;
+    line-height: 24px;
+    color: #FFFFFF;
+    border-radius: 80px;
+    outline: none;
+    border: 2px solid;
+    max-height: 50px;
+    max-width: 150px;
+    min-width: 100px;
+    background-color: #999999;
 }

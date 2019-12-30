@@ -87,20 +87,23 @@ class Tab extends React.Component
 }
 
 
-class ContentDelivery extends React.Component
+class InputText extends React.Component
 {
-
     constructor()
     {
         super();
         this.state =
             {
                 textName: '',
-                textNameCorrect: true,
-                textAddress: '',
-                textAddressCorrect: true,
-                textComment: ''
-            }
+                textNameCorrect: false,
+            };
+        this.firstRender = true;
+    }
+
+
+    componentDidMount()
+    {
+        this.firstRender = false;
     }
 
 
@@ -117,6 +120,39 @@ class ContentDelivery extends React.Component
             this.setState({textNameCorrect: false});
         }
     };
+
+
+    render()
+    {
+        const {textName} = this.state;
+        const showError =  this.state.textNameCorrect || this.firstRender;
+        return (
+            <div className="containerComponent">
+                <label>ФИО</label>
+                <input className={showError ? "" : "test"} value={textName} placeholder="Только кириллица" onChange={(e) => this.changeName(e)} />
+                <small className={showError ? "hideErrorText" : "showErrorText"}>Введите корректное имя.</small>
+            </div>
+        )
+    }
+}
+
+
+class ContentDelivery extends React.Component
+{
+
+    constructor()
+    {
+        super();
+        this.state =
+            {
+                textName: true,
+                textAddress: '',
+                textAddressCorrect: true,
+                textComment: '',
+                numberCorrect: true,
+                stateButton: false
+            }
+    }
 
 
     changeAddress = (e) =>
@@ -140,36 +176,54 @@ class ContentDelivery extends React.Component
     };
 
 
+    changeNumber = (e) =>
+    {
+        if((e.target.value.replace( /\D/g, '').length === 11))
+        {
+            this.setState({numberCorrect: true});
+        }
+        else
+        {
+            this.setState({numberCorrect: false});
+        }
+    };
+
+
+    changeStateButton = () =>
+    {
+        // if(this.state.textNameCorrect)
+        // {
+        //     this.setState({stateButton: true})
+        // }
+    };
+
+
     render()
     {
-        const {textName} = this.state;
-        const {textAddress} = this.state;
-        const {textComment} = this.state;
+        console.log("render")
+        const {textAddress, textComment} = this.state;
 
         return (
             <div className={this.props.showContent ? "showContent" : "hideContent"}>
                 <div className="containerFirst">
-                    <div className="containerComponent">
-                        <label>ФИО</label>
-                        <input className={this.state.textNameCorrect ? "" : "test"} value={textName} placeholder="Только кириллица" onChange={(e) => this.changeName(e)} />
-                        <small className={this.state.textNameCorrect ? "hideErrorText" : "showErrorText"}>Введите корректное имя.</small>
-                    </div>
+                <InputText/>
                     <div className="containerComponent">
                         <label>Телефон</label>
-                        <InputMask mask="+7 (999) 999-99-99" placeholder="+7 (___) ___-__-__"/>
+                        <InputMask mask="+7 (999) 999-99-99" placeholder="+7 (___) ___-__-__" onChange={(e) => this.changeNumber(e)}/>
+                        <small className={this.state.numberCorrect ? "hideErrorText" : "showErrorText"}>Введите номер телефона</small>
                     </div>
                 </div>
-                    <div className="containerComponent containerInputAddress">
-                        <label>Адрес доставки</label>
-                        <input className={this.state.textAddressCorrect ? "" : "test"} value={textAddress} placeholder="Город, улица, дом" onChange={(e) => this.changeAddress(e)}/>
-                        <small className={this.state.textAddressCorrect ? "hideErrorText" : "showErrorText"}>Введите адрес доставки</small>
-                    </div>
-                    <div className="containerComponent containerInputComment">
-                        <label>Комментарий</label>
-                        <textarea value={textComment} onChange={(e) => this.changeComment(e)}> </textarea>
-                    </div>
+                <div className="containerComponent containerInputAddress">
+                    <label>Адрес доставки</label>
+                    <input className={this.state.textAddressCorrect ? "" : "test"} value={textAddress} placeholder="Город, улица, дом" onChange={(e) => this.changeAddress(e)}/>
+                    <small className={this.state.textAddressCorrect ? "hideErrorText" : "showErrorText"}>Введите адрес доставки</small>
+                </div>
+                <div className="containerComponent containerInputComment">
+                    <label>Комментарий</label>
+                    <textarea value={textComment} onChange={(e) => this.changeComment(e)}> </textarea>
+                </div>
                 <div className="containerButtonCheckout">
-                    <button className="checkout">Оформить заказ</button>
+                    <button className={this.state.stateButton ? "checkout" : "checkoutOff"}>Оформить заказ</button>
                 </div>
             </div>
         );
@@ -177,20 +231,11 @@ class ContentDelivery extends React.Component
 }
 
 
-const MarkerGoogleMap = () => <div className="marker" onClick={() => console.log("You clicked me!")} ></div>;
+const MarkerGoogleMap = (props) => <div className="marker" onClick={props.clickTest}></div>;
 
 
 class ContentPickup extends React.Component
 {
-    static defaultProps = {
-        center: {
-            lat:  55.982596,
-            lng:  37.176637
-        },
-        zoom: 11
-    };
-
-
     constructor()
     {
         super();
@@ -201,18 +246,32 @@ class ContentPickup extends React.Component
                         {lat: 55.980673, lng: 37.168749},
                         {lat: 55.998212, lng:  37.225081}
                     ],
-                checkBoxSelected: "null",
+                checkBoxSelected: null,
+                center:
+                {
+                    lat:  55.982596,
+                    lng:  37.176637
+                },
+                zoom: 11
             }
     }
 
+    test = () =>
+    {
+        console.log(this.state.markers[0].lat)
+        this.setState({center:
+                {
+                    lat:  54.982596,
+                    lng:  37.176637
+                }})
+    };
 
     render()
     {
         const markerComponent = this.state.markers.map((marker, index) =>
         {
-            return (<MarkerGoogleMap  key={index} lat={marker.lat} lng={marker.lng} />)
+            return (<MarkerGoogleMap clickTest={this.test} key={index} lat={marker.lat} lng={marker.lng} />)
         });
-
         return (
             <div className={this.props.showContent ? "showContent" : "hideContent"}>
                 <div>
@@ -223,7 +282,7 @@ class ContentPickup extends React.Component
                 </div>
 
                 <div style={{ height: '90%', width: '100%' }}>
-                    <GoogleMapReact defaultCenter={this.props.center} defaultZoom={this.props.zoom}>
+                    <GoogleMapReact center={this.state.center} defaultZoom={this.state.zoom}>
                         {markerComponent}
                     </GoogleMapReact>
                 </div>
@@ -250,11 +309,11 @@ class App extends React.Component
         return (
             <div className="containerInner">
                 <div className="containerTabs">
-                    <Tab showTab={this.state.showTabDelivery} nameTab={this.state.nameTabDelivery} click={() => this.setState({showContentPickup: false, showContentDelivery: true, showTabDelivery: true, showTabPickup: false})}/>
-                    <Tab showTab={this.state.showTabPickup} nameTab={this.state.nameTabPickup} click={() => this.setState({showContentDelivery: false, showContentPickup: true, showTabPickup: true, showTabDelivery: false})}/>
+                    <Tab showTab={this.state.showTabDelivery} nameTab={this.state.nameTabDelivery} click={() => this.setState({showTabDelivery: true, showTabPickup: false})}/>
+                    <Tab showTab={this.state.showTabPickup} nameTab={this.state.nameTabPickup} click={() => this.setState({showTabPickup: true, showTabDelivery: false})}/>
                 </div>
-                <ContentDelivery showContent={this.state.showContentDelivery}/>
-                <ContentPickup showContent={this.state.showContentPickup}/>
+                <ContentDelivery showContent={this.state.showTabDelivery}/>
+                <ContentPickup showContent={this.state.showTabPickup}/>
             </div>
         );
     }
