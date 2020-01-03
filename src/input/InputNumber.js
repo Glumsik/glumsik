@@ -8,14 +8,8 @@ class InputNumber extends React.Component
         super();
         this.state =
             {
-                numberCorrect: false,
+                numberCorrect: true,
             };
-        this.firstRender = true;
-    }
-
-
-    componentDidMount()
-    {
         this.firstRender = false;
     }
 
@@ -25,17 +19,20 @@ class InputNumber extends React.Component
         if((e.target.value.replace( /\D/g, '').length === 11))
         {
             this.setState({numberCorrect: true});
+            this.firstRender = true;
         }
         else
         {
             this.setState({numberCorrect: false});
+            this.firstRender = false;
         }
+        this.props.checkButton(this.firstRender, 'inputNumber')
     };
 
 
     render()
     {
-        const showError =  this.state.numberCorrect || this.firstRender;
+        const showError =  this.state.numberCorrect;
         return (
             <div className="containerComponent">
                     <label>Телефон</label>

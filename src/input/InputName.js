@@ -2,44 +2,46 @@ import React from "react";
 
 class InputName extends React.Component
 {
-    constructor(props)
+    constructor()
     {
         super();
         this.state =
             {
                 textName: '',
-                textNameCorrect: false,
+                textNameCorrect: true,
             };
-        this.firstRender = true;
-    }
-
-
-    componentDidMount()
-    {
         this.firstRender = false;
     }
 
 
     changeName = (e) =>
     {
-        this.setState({textName: e.target.value});
-
         if((parseInt(e.target.value.replace( /\D/g, '')) || true) === true)
         {
-            this.setState({textNameCorrect: true});
+            this.setState(
+                {
+                    textNameCorrect: true,
+                    textName: e.target.value
+                });
+            this.firstRender = true
         }
         else
         {
-            this.setState({textNameCorrect: false});
+            this.setState(
+                {
+                    textNameCorrect: false,
+                    textName: e.target.value
+                });
+            this.firstRender = false;
         }
+        this.props.checkButton(this.firstRender, 'inputName')
     };
 
 
     render()
     {
         const {textName} = this.state;
-        const showError =  this.state.textNameCorrect || this.firstRender;
-
+        const showError =  this.state.textNameCorrect;
         return (
             <div className="containerComponent">
                 <label>ФИО</label>

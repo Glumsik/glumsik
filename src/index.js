@@ -1,9 +1,9 @@
 import React from 'react'
 import {render} from 'react-dom'
-import {ContentDelivery} from "./ContentDelivery";
-import {ContentPickup} from "./ContentPickup";
-import {Tab} from "./Tab";
-import './style.css'
+import {ContentDelivery} from "./content/ContentDelivery";
+import {ContentPickup} from "./content/ContentPickup";
+import {Tab} from "./tab/Tab";
+import './css/style.css'
 
 class App extends React.Component
 {

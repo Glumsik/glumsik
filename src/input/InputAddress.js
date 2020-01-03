@@ -8,14 +8,8 @@ class InputAddress extends React.Component
         this.state =
             {
                 textAddress: '',
-                textAddressCorrect: false,
+                textAddressCorrect: true,
             };
-        this.firstRender = true;
-    }
-
-
-    componentDidMount()
-    {
         this.firstRender = false;
     }
 
@@ -26,19 +20,30 @@ class InputAddress extends React.Component
 
         if(e.target.value.length > 0)
         {
-            this.setState({textAddressCorrect: true});
+            this.setState(
+                {
+                    textAddressCorrect: true,
+                    textAddress: e.target.value
+                });
+            this.firstRender = true;
         }
         else
         {
-            this.setState({textAddressCorrect: false});
+            this.setState(
+                {
+                    textAddressCorrect: false,
+                    textAddress: e.target.value
+                });
+            this.firstRender = false;
         }
+        this.props.checkButton(this.firstRender, 'inputAddress')
     };
 
 
     render()
     {
         const {textAddress} = this.state;
-        const showError =  this.state.textAddressCorrect || this.firstRender;
+        const showError =  this.state.textAddressCorrect;
 
         return (
             <div className="containerComponent containerInputAddress">

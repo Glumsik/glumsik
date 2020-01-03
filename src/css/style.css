@@ -149,7 +149,7 @@ textarea
     height: 35px;
     width: 100%;
     padding-right: 30px;
-    background-image: URL("./warning.svg");
+    background-image: URL("../image/warning.svg");
     background-repeat: no-repeat;
     background-position: right;
 }
@@ -161,7 +161,7 @@ textarea
     height: 20px;
     position: absolute;
     transform: translate(-50%, -100%);
-    background-image: URL("./location-pin.svg");
+    background-image: URL("../image/location-pin.svg");
     background-repeat: no-repeat;
     background-size: 20px 20px;
 }
@@ -170,16 +170,13 @@ textarea
 .checkout
 {
     height: 90%;
-    background-color: #215BF0;
+    /*background-color: #215BF0;*/
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 100%;
-    line-height: 24px;
-    color: #FFFFFF;
-    border-radius: 80px;
-    outline: none;
-    border: 2px solid;
+    text-decoration: none;
+    border-radius: 3px;
+    background: rgb(64,199,129);
+    box-shadow: 0 -3px rgb(53,167,110) inset;
+    transition: 0.2s;
     max-height: 50px;
     max-width: 150px;
     min-width: 100px;
@@ -192,7 +189,6 @@ textarea
 }
 
 
-
 .checkout:hover
 {
     background-color: green;
@@ -200,7 +196,8 @@ textarea
 
 .checkout:active
 {
-    background-color: red;
+    background: rgb(33,147,90);
+    box-shadow: 0 3px rgb(33,147,90) inset;
 }
 
 .checkoutOff
@@ -231,5 +228,24 @@ textarea
 .radioComponentInner
 {
     display: flex;
+    justify-content: space-around;
+    margin: 30px 0 0 0;
+}
+
+.addressPickup
+{
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 100%;
+    line-height: 24px;
+}
+
+.googleMapContainer
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
     justify-content: center;
+    align-items: center;
 }
