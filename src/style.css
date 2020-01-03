@@ -80,7 +80,7 @@ body
     height: 100%;
     width: 48%;
 }
-input
+.inputText
 {
     border: 1px solid #999999;
     box-sizing: border-box;
@@ -89,12 +89,15 @@ input
     width: 100%;
 }
 
-input:focus
+.inputText:focus
 {
     border: 1px solid black;
     outline:none;
 }
 
+{
+
+}
 textarea
 {
     border: 1px solid #999999;
@@ -140,7 +143,11 @@ textarea
 
 .test
 {
-    /*height: 30px;*/
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 35px;
+    width: 100%;
     padding-right: 30px;
     background-image: URL("./warning.svg");
     background-repeat: no-repeat;
@@ -212,4 +219,17 @@ textarea
     max-width: 150px;
     min-width: 100px;
     background-color: #999999;
+}
+
+.radioComponent
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radioComponentInner
+{
+    display: flex;
+    justify-content: center;
 }
