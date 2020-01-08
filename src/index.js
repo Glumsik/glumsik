@@ -4,6 +4,10 @@ import {ContentDelivery} from "./content/ContentDelivery";
 import {ContentPickup} from "./content/ContentPickup";
 import {Tab} from "./tab/Tab";
 import './css/style.css'
+import './input/input.css'
+import './googleMap/googleMap.css'
+import './tab/tab.css'
+import './radioComponent/radio.css'
 
 class App extends React.Component
 {
@@ -20,7 +24,8 @@ class App extends React.Component
     render()
     {
         return (
-            <div className="containerInner">
+            <div className="containerApp">
+                <h1 className="selectTab">Выберите способ доставки</h1>
                 <div className="containerTabs">
                     <Tab showTab={this.state.showTabDelivery} nameTab={this.state.nameTabDelivery} click={() => this.setState({showTabDelivery: true, showTabPickup: false})}/>
                     <Tab showTab={this.state.showTabPickup} nameTab={this.state.nameTabPickup} click={() => this.setState({showTabPickup: true, showTabDelivery: false})}/>

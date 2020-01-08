@@ -17,8 +17,8 @@ class ContentPickup extends React.Component
                     ],
                 center:
                     {
-                        lat: 55.982596,
-                        lng: 37.176637
+                        lat: 55.992698,
+                        lng: 37.191747
                     },
                 zoom: 11,
                 checkBoxSelected: null

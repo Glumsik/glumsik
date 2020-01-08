@@ -46,9 +46,9 @@ class InputAddress extends React.Component
         const showError =  this.state.textAddressCorrect;
 
         return (
-            <div className="containerComponent containerInputAddress">
-                <label>Адрес доставки</label>
-                <input className={showError ? "inputText" : "test"} value={textAddress} placeholder="Город, улица, дом" onChange={(e) => this.changeAddress(e)}/>
+            <div className="containerInputAddress">
+                <label className="paddingLabel">Адрес доставки</label>
+                <input className={showError ? "inputText" : "errorImage"} value={textAddress} placeholder="Город, улица, дом" onChange={(e) => this.changeAddress(e)}/>
                 <small className={showError ? "hideErrorText" : "showErrorText"}>Введите адрес доставки</small>
             </div>
         )

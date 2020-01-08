@@ -43,9 +43,9 @@ class InputName extends React.Component
         const {textName} = this.state;
         const showError =  this.state.textNameCorrect;
         return (
-            <div className="containerComponent">
-                <label>ФИО</label>
-                <input className={showError ? "inputText" : "test"} value={textName} placeholder="Только кириллица" onChange={(e) => this.changeName(e)} />
+            <div className="containerInputName">
+                <label className="paddingLabel">ФИО</label>
+                <input className={showError ? "inputText" : "errorImage"} value={textName} placeholder="Только кириллица" onChange={(e) => this.changeName(e)} />
                 <small className={showError ? "hideErrorText" : "showErrorText"}>Введите корректное имя.</small>
             </div>
         )

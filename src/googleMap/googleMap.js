@@ -27,7 +27,7 @@ class GoogleMap extends React.Component
 
         return (
             <div className="googleMapContainer">
-                <div style={{width:'90%', height:'90%'}}>
+                <div>
                     <GoogleMapReact center={this.props.center} zoom={this.props.zoom}>
                         {markerComponent}
                     </GoogleMapReact>

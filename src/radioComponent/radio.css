@@ -1,0 +1,47 @@
+.radioComponent
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radioComponentInner
+{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 0 0;
+}
+
+.addressPickup
+{
+    font-family: Roboto;
+    font-size: 100%;
+    line-height: 24px;
+    cursor: pointer;
+}
+
+.addressPickup:hover
+{
+    color: #215BF0;
+}
+
+
+@media (max-width: 580px)
+{
+    .radioComponentInner
+    {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+/*@media (min-width: 1200px)*/
+/*{*/
+/*    .radioComponentInner*/
+/*    {*/
+/*        display: flex;*/
+/*        justify-content: space-around;*/
+/*    }*/
+/*}*/

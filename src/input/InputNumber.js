@@ -34,8 +34,8 @@ class InputNumber extends React.Component
     {
         const showError =  this.state.numberCorrect;
         return (
-            <div className="containerComponent">
-                    <label>Телефон</label>
+            <div className="containerInputNumber">
+                    <label className="paddingLabel">Телефон</label>
                     <InputMask mask="+7 (999) 999-99-99" className="inputText" placeholder="+7 (___) ___-__-__" onChange={(e) => this.changeNumber(e)}/>
                     <small className={showError ? "hideErrorText" : "showErrorText"}>Введите номер телефона</small>
             </div>

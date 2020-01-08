@@ -1,25 +1,31 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 body
 {
     background-color: #E5E5E5;
+    margin: 0;
 }
 
 #root
 {
-    height: 100%;
     width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.containerInner
+.containerApp
 {
     width: 100%;
     height: 100%;
     background-color: transparent;
 }
 
-.containerTabs
+.selectTab
 {
-    display: flex;
+    width: 100%;
+    height: 100%;
 }
 
 .hideContent
@@ -31,221 +37,66 @@ body
 {
     height: 500px;
     width: 100%;
+    box-sizing: border-box;
     background-color: #FFFFFF;
-    border-radius: 0 0 5px 5px;
     display: flex;
     flex-direction: column;
-}
-
-.showErrorText
-{
-    color: red;
-}
-
-.hideErrorText
-{
-    display: none;
-}
-
-.tab
-{
-    width: 152px;
-    height: 48px;
-    margin: 0 8px 0 0;
-    border-radius: 5px 5px 0 0;
-    font-family: Roboto;
-    display: flex;
-    align-items: center;
     justify-content: center;
-}
-
-.showTab
-{
-    cursor: default;
-    background-color: #FFFFFF;
-    color: #215BF0;
-}
-
-.hideTab
-{
-    cursor: pointer;
-    background-color: #EDEEEF;
-    color: #999999;
-}
-
-.containerComponent
-{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 48%;
-}
-.inputText
-{
-    border: 1px solid #999999;
-    box-sizing: border-box;
-    border-radius: 4px;
-    height: 35px;
-    width: 100%;
-}
-
-.inputText:focus
-{
-    border: 1px solid black;
-    outline:none;
-}
-
-{
-
-}
-textarea
-{
-    border: 1px solid #999999;
-    box-sizing: border-box;
-    border-radius: 4px;
-    height: 90px;
-    width: 100%;
-    resize: none;
-    outline:none;
-}
-.containerFirst
-{
-    width: 90%;
-    height: 25%;
-    display: flex;
-    justify-content: space-between;
-    margin: 30px 5% 0 5%;
-}
-
-.containerInputAddress
-{
-    width: 90%;
-    height: 25%;
-    margin: 30px 5% 0 5%;
-}
-.containerInputComment
-{
-    width: 90%;
-    height: 25%;
-    margin: 30px 5% 0 5%;
+    align-items: center;
+    padding: 30px 5% 5% 5%;
 }
 
 .containerButtonCheckout
 {
     display: flex;
-    width: 90%;
-    height: 15%;
+    width: 100%;
+    height: 25%;
     justify-content: flex-end;
     flex-direction: column;
     align-items: flex-end;
-    margin: 0 5% 10px 5%;
 }
 
-.test
-{
-    border: 1px solid #999999;
-    box-sizing: border-box;
-    border-radius: 4px;
-    height: 35px;
-    width: 100%;
-    padding-right: 30px;
-    background-image: URL("../image/warning.svg");
-    background-repeat: no-repeat;
-    background-position: right;
-}
-
-
-.marker
-{
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    transform: translate(-50%, -100%);
-    background-image: URL("../image/location-pin.svg");
-    background-repeat: no-repeat;
-    background-size: 20px 20px;
-}
-
-
-.checkout
-{
-    height: 90%;
-    /*background-color: #215BF0;*/
-    font-family: Roboto;
-    text-decoration: none;
-    border-radius: 3px;
-    background: rgb(64,199,129);
-    box-shadow: 0 -3px rgb(53,167,110) inset;
-    transition: 0.2s;
-    max-height: 50px;
-    max-width: 150px;
-    min-width: 100px;
-    cursor: pointer;
-}
-
-.checkout:focus
-{
-    outline: none;
-}
-
-
-.checkout:hover
-{
-    background-color: green;
-}
-
-.checkout:active
-{
-    background: rgb(33,147,90);
-    box-shadow: 0 3px rgb(33,147,90) inset;
-}
-
+.checkout,
 .checkoutOff
 {
-    height: 90%;
+    height: 48px;
+    width: 200px;
     font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 100%;
-    line-height: 24px;
     color: #FFFFFF;
     border-radius: 80px;
     outline: none;
     border: 2px solid;
-    max-height: 50px;
-    max-width: 150px;
-    min-width: 100px;
+    background-color:  #215BF0;
+    cursor: pointer;
+}
+
+.checkout:hover
+{
+    background-color: #0F41C4;
+}
+
+.checkoutOff
+{
+    cursor: default;
     background-color: #999999;
 }
 
-.radioComponent
+
+@media (max-width: 580px)
 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    .containerApp
+    {
+        width: 100%;
+        height: 100%;
+    }
 }
 
-.radioComponentInner
+@media (min-width: 1200px)
 {
-    display: flex;
-    justify-content: space-around;
-    margin: 30px 0 0 0;
+    .containerApp
+    {
+        width: 1200px;
+        height: 100%;
+    }
 }
 
-.addressPickup
-{
-    font-family: Roboto;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 100%;
-    line-height: 24px;
-}
-
-.googleMapContainer
-{
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}

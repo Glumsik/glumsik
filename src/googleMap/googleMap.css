@@ -1,0 +1,19 @@
+.marker
+{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transform: translate(-50%, -100%);
+    background-image: URL("../image/marker.svg");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+
+.googleMapContainer
+{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
