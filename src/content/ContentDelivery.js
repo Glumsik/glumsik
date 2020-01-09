@@ -55,7 +55,7 @@ class ContentDelivery extends React.Component
     {
         return (
             <div className={this.props.showContent ? "showContent" : "hideContent"}>
-                <div className="containerInner">
+                <div className="containerOuter">
                     <InputName checkButton={this.checkButton}/>
                     <InputNumber checkButton={this.checkButton}/>
                 </div>

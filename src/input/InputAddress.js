@@ -16,8 +16,6 @@ class InputAddress extends React.Component
 
     changeAddress = (e) =>
     {
-        this.setState({textAddress: e.target.value});
-
         if(e.target.value.length > 0)
         {
             this.setState(

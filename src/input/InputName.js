@@ -16,7 +16,7 @@ class InputName extends React.Component
 
     changeName = (e) =>
     {
-        if((parseInt(e.target.value.replace( /\D/g, '')) || true) === true)
+        if((/^[A-ZА-ЯЁ\s-]+$/i).test(e.target.value) === true)
         {
             this.setState(
                 {

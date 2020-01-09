@@ -7,7 +7,7 @@ class RadioComponent extends React.Component
         this.check(e.target.value);
     };
 
-    
+
     checkBoxSelected = (value) =>
     {
         this.check(value);
@@ -30,7 +30,7 @@ class RadioComponent extends React.Component
     render()
     {
         return (
-            <div className="radioComponentInner">
+            <div className="radioComponentOuter">
                 <div className="radioComponent">
                     <input type='radio'  value='radio-1'
                            checked={this.props.checkBoxSelected === 'radio-1'} onChange={(e) => this.checkBoxSelectedInput(e)} />
