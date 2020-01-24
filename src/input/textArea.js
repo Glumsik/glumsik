@@ -24,8 +24,8 @@ class TextArea extends React.Component
 
         return (
             <div className="containerInputComment">
-                <label className="paddingLabel">Комментарий</label>
-                <textarea className="textArea" value={textComment} onChange={(e) => this.changeComment(e)}> </textarea>
+                <label className="paddingLabel" htmlFor="InputComment">Комментарий</label>
+                <textarea id="InputComment" className="textArea" value={textComment} onChange={(e) => this.changeComment(e)}> </textarea>
             </div>
         )
     }

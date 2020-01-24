@@ -34,7 +34,7 @@ class InputName extends React.Component
                 });
             this.firstRender = false;
         }
-        this.props.checkButton(this.firstRender, 'inputName')
+        this.props.checkButton(this.firstRender, 'inputName');
     };
 
 
@@ -42,11 +42,13 @@ class InputName extends React.Component
     {
         const {textName} = this.state;
         const showError =  this.state.textNameCorrect;
+        const show = showError ? ('') : (<label htmlFor="InputName" className="showErrorText">Введите корректное имя.</label>);
+        
         return (
             <div className="containerInputName">
-                <label className="paddingLabel">ФИО</label>
-                <input className={showError ? "inputText" : "errorImage"} value={textName} placeholder="Только кириллица" onChange={(e) => this.changeName(e)} />
-                <small className={showError ? "hideErrorText" : "showErrorText"}>Введите корректное имя.</small>
+                <label className="paddingLabel" htmlFor="InputName">ФИО</label>
+                <input id="InputName" className={showError ? "inputText" : "errorImage"} value={textName} placeholder="Только кириллица" onChange={(e) => this.changeName(e)} />
+                {show}
             </div>
         )
     }

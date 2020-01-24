@@ -5,7 +5,7 @@ class Tab extends React.Component
     render()
     {
         return (
-            <div className={this.props.showTab ? "showTab tab" : "hideTab tab"} onClick={this.props.click}>{this.props.nameTab}</div>
+            <li className={this.props.showTab ? "showTab "+this.props.classNameTab+'' : "hideTab "+this.props.classNameTab+'' } onClick={this.props.click}>{this.props.nameTab}</li>
         );
     }
 }

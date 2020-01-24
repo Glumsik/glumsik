@@ -42,12 +42,14 @@ class InputAddress extends React.Component
     {
         const {textAddress} = this.state;
         const showError =  this.state.textAddressCorrect;
+        const show = showError ? ('') : (<label htmlFor="InputAddress" className="showErrorText">Введите адрес доставки.</label>);
+
 
         return (
             <div className="containerInputAddress">
-                <label className="paddingLabel">Адрес доставки</label>
-                <input className={showError ? "inputText" : "errorImage"} value={textAddress} placeholder="Город, улица, дом" onChange={(e) => this.changeAddress(e)}/>
-                <small className={showError ? "hideErrorText" : "showErrorText"}>Введите адрес доставки</small>
+                <label className="paddingLabel" htmlFor="InputAddress">Адрес доставки</label>
+                <input  id="InputAddress" className={showError ? "inputText" : "errorImage"} value={textAddress} placeholder="Город, улица, дом" onChange={(e) => this.changeAddress(e)}/>
+                {show}
             </div>
         )
     }
