@@ -47,7 +47,7 @@ class InputName extends React.Component
         return (
             <div className="containerInputName">
                 <label className="paddingLabel" htmlFor="InputName">ФИО</label>
-                <input id="InputName" className={showError ? "inputText" : "errorImage"} value={textName} placeholder="Только кириллица" onChange={(e) => this.changeName(e)} />
+                <input id="InputName" className={showError ? "InputName" : "errorImage"} value={textName} placeholder="Только кириллица" onChange={(e) => this.changeName(e)} />
                 {show}
             </div>
         )

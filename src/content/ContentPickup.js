@@ -62,7 +62,7 @@ class ContentPickup extends React.Component
     render()
     {
         return (
-            <div className={this.props.showContent ? "showContent" : "hideContent"}>
+            <div className={this.props.showContent ? "showContentPickup" : "hideContent"}>
                 <RadioComponent stateMarkers={this.stateMarkers} checkBoxSelected={this.state.checkBoxSelected}/>
                 <GoogleMap stateMarkers={this.stateMarkers} markers={this.state.markers} center={this.state.center} zoom={this.state.zoom}/>
                 <div className="containerButtonCheckout">

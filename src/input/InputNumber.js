@@ -59,7 +59,7 @@ class InputNumber extends React.Component
         return (
             <div className="containerInputNumber">
                     <label className="paddingLabel" htmlFor="InputNumber">Телефон</label>
-                    <InputMask id="InputNumber" mask="+7 (999) 999-99-99" className="inputText" placeholder="+7 (___) ___-__-__" onChange={(e) => this.changeNumberFocus(e)} onBlur={(e) => this.changeNumberBlur(e)}/>
+                    <InputMask id="InputNumber" mask="+7 (999) 999-99-99" className="InputNumber" placeholder="+7 (___) ___-__-__" onChange={(e) => this.changeNumberFocus(e)} onBlur={(e) => this.changeNumberBlur(e)}/>
                     {show}
             </div>
 

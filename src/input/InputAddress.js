@@ -48,7 +48,7 @@ class InputAddress extends React.Component
         return (
             <div className="containerInputAddress">
                 <label className="paddingLabel" htmlFor="InputAddress">Адрес доставки</label>
-                <input  id="InputAddress" className={showError ? "inputText" : "errorImage"} value={textAddress} placeholder="Город, улица, дом" onChange={(e) => this.changeAddress(e)}/>
+                <input  id="InputAddress" className={showError ? "InputAddress" : "errorAddress"} value={textAddress} placeholder="Город, улица, дом" onChange={(e) => this.changeAddress(e)}/>
                 {show}
             </div>
         )

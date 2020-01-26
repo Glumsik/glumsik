@@ -1,8 +1,8 @@
 
-.containerOuter
+.containerInner
 {
     width: 100%;
-    height: 25%;
+    height: 96px;
     display: flex;
     justify-content: space-between;
 }
@@ -10,21 +10,26 @@
 .containerInputName,
 .containerInputNumber
 {
-    width: 100%;
-    height: 100%;
-    margin: 0 5% 0 0;
+    width: auto;
+    height: 96px;
+    display: flex;
+    flex-direction: column;
 }
 
-.containerInputNumber
+.containerInputAddress
 {
-    margin: 0 0 0 5%;
+    width: 100%;
+    height: 96px;
+    display: flex;
+    flex-direction: column;
 }
 
-.containerInputAddress,
 .containerInputComment
 {
     width: 100%;
-    height: 25%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
 }
 
 .inputText:focus,
@@ -40,18 +45,32 @@
     border: 1px solid #999999;
     box-sizing: border-box;
     border-radius: 4px;
-    height: 80px;
-    width: 100%;
-    margin: 5px 0 0 0;
+    height: 112px;
+    width: 952px;
     resize: none;
     outline:none;
     padding: 5px;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 17px 12px 17px;
+}
+
+.textArea::placeholder
+{
+    font-family: Roboto, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
 }
 
 .showErrorText
 {
-    /*font-family: Roboto, sans-serif;*/
-    color: red;
+    font-family: Roboto, sans-serif;
+    color: #F12828;;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 4px 0 0 0;
+    width: 35%;
 }
 
 .hideErrorText
@@ -59,47 +78,127 @@
     display: none;
 }
 
-.inputText,
-.errorImage
+
+.InputName
 {
     border: 1px solid #999999;
     box-sizing: border-box;
     border-radius: 4px;
-    height: 35px;
-    width: 100%;
-    padding: 5px;
-    margin: 5px 0 0 0;
+    height: 48px;
+    width: 464px;
+    padding: 12px 56px 12px 17px;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.InputName,
+.errorImage
+::placeholder
+{
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.InputNumber
+{
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 48px;
+    width: 464px;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 12px 17px 12px 17px;
+}
+
+.InputAddress
+{
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 48px;
+    width: 952px;
+    padding: 12px 17px 12px 17px;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.InputAddress::placeholder
+{
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .errorImage
 {
     background-image: URL("../image/error.svg");
     background-repeat: no-repeat;
-    background-position: right 5px bottom 45%;
-    padding: 5px 30px 5px 5px;
+    background-position: right 17px bottom 45%;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 48px;
+    width: 464px;
+    padding: 12px 56px 12px 17px;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.errorAddress
+{
+    background-image: URL("../image/error.svg");
+    background-repeat: no-repeat;
+    background-position: right 17px bottom 45%;
+    border: 1px solid #999999;
+    box-sizing: border-box;
+    border-radius: 4px;
+    height: 48px;
+    width: 100%;
+    padding: 12px 56px 12px 17px;
+    font-family: Roboto;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 .paddingLabel
 {
     font-family: Roboto, sans-serif;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 0 0 12px 0;
+    width: 12%;
 }
 
-@media (max-width: 580px)
+@media (max-width: 1032px)
 {
-    .containerOuter
+    .InputName
     {
-        flex-direction: column;
-        height: 50%;
+        width: 100%;
     }
 
-    .containerInputName
+    .InputNumber
     {
-        margin: 0;
+        width: 100%;
     }
 
+    .InputAddress
+    {
+        width: 100%;
+    }
+
+    .containerInputName,
     .containerInputNumber
     {
-        margin: 0;
+        width: 100%;
+        height: 96px;
+        display: flex;
+        flex-direction: column;
     }
 }
 

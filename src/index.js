@@ -28,7 +28,7 @@ class App extends React.Component
         return (
             <div className="containerApp">
                 <div className="selectOuter">
-                    <span className="selectTab">Выберите способ доставки</span>
+                    <h1 className="selectTab">Выберите способ доставки</h1>
                 </div>
                 <ul className="containerTabs">
                     <Tab showTab={this.state.showTabDelivery} classNameTab={this.state.classNameDelivery} nameTab={this.state.nameTabDelivery} click={() => this.setState({showTabDelivery: true, showTabPickup: false})}/>

@@ -8,10 +8,10 @@ class RadioComponent extends React.Component
     };
 
 
-    checkBoxSelected = (value) =>
-    {
-        this.check(value);
-    };
+    // checkBoxSelected = (value) =>
+    // {
+    //     this.check(value);
+    // };
 
 
     check = (value) =>
@@ -32,14 +32,14 @@ class RadioComponent extends React.Component
         return (
             <div className="radioComponentOuter">
                 <div className="radioComponent">
-                    <input type='radio'  value='radio-1'
+                    <input id="radio-1" type='radio'  value='radio-1'
                            checked={this.props.checkBoxSelected === 'radio-1'} onChange={(e) => this.checkBoxSelectedInput(e)} />
-                    <small onClick={(e) => this.checkBoxSelected('radio-1')} className="addressPickup">ул. Юности, 5, Зеленоград, Москва, 124482</small>
+                    <label htmlFor="radio-1" className="addressPickup">ул. Юности, 5, Зеленоград, Москва, 124482</label>
                 </div>
                 <div className="radioComponent">
-                    <input type='radio'  value='radio-2'
+                    <input id="radio-2" type='radio'  value='radio-2'
                            checked={this.props.checkBoxSelected === 'radio-2'} onChange={(e) => this.checkBoxSelectedInput(e)} />
-                    <small onClick={(e) => this.checkBoxSelected('radio-2')} className="addressPickup">корпус 1549, Зеленоград, Москва, 124683</small>
+                    <label htmlFor="radio-2" className="addressPickup">корпус 1549, Зеленоград, Москва, 124683</label>
                 </div>
             </div>
         )
