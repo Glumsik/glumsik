@@ -172,7 +172,7 @@
     font-size: 12px;
     line-height: 16px;
     margin: 0 0 12px 0;
-    width: 12%;
+    width: 40%;
 }
 
 @media (max-width: 1032px)
@@ -197,11 +197,51 @@
     {
         width: 100%;
         height: 96px;
-        display: flex;
-        flex-direction: column;
+    }
+    .containerInputName
+    {
+        margin-right: 10px;
+    }
+
+    .textArea
+    {
+        height: 112px;
+        width: 100%;
+    }
+
+    .showErrorText
+    {
+        width: 60%;
+    }
+
+    .errorImage
+    {
+        height: 48px;
+        width: 100%;
     }
 }
 
+
+@media (max-width: 580px)
+{
+    .containerInner
+    {
+        width: 100%;
+        height: 192px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .paddingLabel
+    {
+        margin: 0 0 5px 0;
+    }
+
+    .containerInputName
+    {
+        margin-right: 0;
+    }
+}
 
 
 

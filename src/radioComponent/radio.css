@@ -87,5 +87,26 @@
     .radioComponent
     {
         margin: 0 0 20px 0;
+        width: 100%;
+        height: 45px;
     }
+
+    .radioComponent input::after
+    {
+        top: 14px;
+        left: 3px;
+    }
+
+
+    .radioComponent input:checked::after
+    {
+        top: 19px;
+        left: 8px;
+    }
+
+    .radioComponent input:checked::before
+    {
+        top: 14px;
+        left: 3px;
+    } 
 }
