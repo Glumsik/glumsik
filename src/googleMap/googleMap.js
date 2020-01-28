@@ -1,6 +1,6 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
-import {isMobile} from 'react-device-detect';
+import {isMobile, isTablet} from 'react-device-detect';
 
 
 const MarkerGoogleMap = (props) => <div className="marker" onClick={props.click}><svg width="34" height="40" viewBox="0 0 34 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -33,7 +33,7 @@ class GoogleMap extends React.Component
         return (
             <div className="googleMapContainer">
                 <div style={{width:'100%', height:'100%'}}>
-                    <GoogleMapReact options={isMobile ? {gestureHandling: "none"} : {gestureHandling: "greedy"}} center={this.props.center} zoom={this.props.zoom}>
+                    <GoogleMapReact options={(isMobile || isTablet) ? {gestureHandling: "none"} : {gestureHandling: "greedy"}} center={this.props.center} zoom={this.props.zoom}>
                         {markerComponent}
                     </GoogleMapReact>
                 </div>
