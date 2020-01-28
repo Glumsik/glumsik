@@ -17,15 +17,19 @@ class InputNumber extends React.Component
 
     changeNumberBlur = (e) =>
     {
-        if((e.target.value.replace( /\D/g, '').length === 11))
+        if((e.target.value.replace( /\D/g, '').length === 11) || (e.target.value.replace( /\D/g, '').length < 1))
         {
             this.setState({numberCorrect: true});
-            this.firstRender = true;
+            if((e.target.value.replace( /\D/g, '').length === 11))
+            {
+                this.firstRender = true;
+            }
         }
         else
         {
             this.setState({numberCorrect: false});
             this.firstRender = false;
+            console.log(e.target.value.replace( /\D/g, '').length)
         }
             
         
@@ -46,7 +50,7 @@ class InputNumber extends React.Component
             this.firstRender = false;
         }
         this.props.checkButton(this.firstRender, 'inputNumber')
-    }
+    };
 
        
 
@@ -59,7 +63,7 @@ class InputNumber extends React.Component
         return (
             <div className="containerInputNumber">
                     <label className="paddingLabel" htmlFor="InputNumber">Телефон</label>
-                    <InputMask id="InputNumber" mask="+7 (999) 999-99-99" className="InputNumber" placeholder="+7 (___) ___-__-__" onChange={(e) => this.changeNumberFocus(e)} onBlur={(e) => this.changeNumberBlur(e)}/>
+                    <InputMask id="InputNumber" mask="+7 (999) 999-99-99" className={showError ? "InputNumber" : "errorImage"} placeholder="+7 (___) ___-__-__" onChange={(e) => this.changeNumberFocus(e)} onBlur={(e) => this.changeNumberBlur(e)}/>
                     {show}
             </div>
 

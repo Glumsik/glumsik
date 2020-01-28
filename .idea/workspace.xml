@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c8501bd0-f67d-4c00-b57d-7482f30c3950" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/precache-manifest.6433c3c9e1d31881810a49dcfb1e5e6f.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/service-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/service-worker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.cb2e70a9.chunk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/css/main.cb2e70a9.chunk.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.34b67701.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.34b67701.chunk.js.LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/2.34b67701.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.87e5a57b.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/main.87e5a57b.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/static/js/runtime-main.5b50bb1e.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/static/js/runtime-main.5b50bb1e.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/googleMap/googleMap.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/googleMap/googleMap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/googleMap/googleMap.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/googleMap/googleMap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input/InputNumber.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/input/InputNumber.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/radioComponent/radio.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/radioComponent/radio.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/tab/tab.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/tab/tab.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +58,7 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
@@ -51,6 +70,34 @@
       <recent name="F:\web\greensight\my-app\src\css" />
       <recent name="F:\web\greensight\my-app\src\content" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -78,6 +125,7 @@
       <workItem from="1577232491548" duration="2476000" />
       <workItem from="1577280223686" duration="67469000" />
       <workItem from="1577479834476" duration="91401000" />
+      <workItem from="1580164064947" duration="8311000" />
     </task>
     <servers />
   </component>
@@ -89,6 +137,22 @@
       <screen x="0" y="0" width="1440" height="860" />
     </state>
     <state x="312" y="89" key="#ESLint/-1366.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1577204317890" />
+    <state width="1419" height="222" key="GridCell.Tab.0.bottom" timestamp="1580179625460">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1419" height="222" key="GridCell.Tab.0.bottom/-1366.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1580179625460" />
+    <state width="1419" height="222" key="GridCell.Tab.0.center" timestamp="1580179625459">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1419" height="222" key="GridCell.Tab.0.center/-1366.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1580179625459" />
+    <state width="1419" height="222" key="GridCell.Tab.0.left" timestamp="1580179625459">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1419" height="222" key="GridCell.Tab.0.left/-1366.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1580179625459" />
+    <state width="1419" height="222" key="GridCell.Tab.0.right" timestamp="1580179625460">
+      <screen x="0" y="0" width="1440" height="860" />
+    </state>
+    <state width="1419" height="222" key="GridCell.Tab.0.right/-1366.0.1366.728/0.0.1440.860@0.0.1440.860" timestamp="1580179625460" />
     <state x="200" y="66" key="SettingsEditor" timestamp="1578491260692">
       <screen x="0" y="0" width="1440" height="860" />
     </state>
