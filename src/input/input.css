@@ -1,6 +1,4 @@
-
-.containerInner
-{
+.containerInner {
     width: 100%;
     height: 96px;
     display: flex;
@@ -8,47 +6,45 @@
 }
 
 .containerInputName,
-.containerInputNumber
-{
+.containerInputNumber {
     width: auto;
     height: 96px;
     display: flex;
     flex-direction: column;
 }
 
-.containerInputAddress
-{
+.containerInputAddress {
     width: 100%;
     height: 96px;
     display: flex;
     flex-direction: column;
 }
 
-.containerInputComment
-{
+.containerInputComment {
     width: 100%;
     height: 160px;
     display: flex;
     flex-direction: column;
 }
 
-.inputText:focus,
+.InputName:focus,
 .errorImage:focus,
-.textArea:focus
-{
+.textArea:focus,
+.InputAddress:focus,
+.InputNumber:focus,
+.errorAddress:focus {
     border: 1px solid black;
-    outline:none;
+    outline: none;
 }
 
-.textArea
-{
+.textArea {
     border: 1px solid #999999;
     box-sizing: border-box;
     border-radius: 4px;
     height: 112px;
     width: 952px;
     resize: none;
-    outline:none;
+    outline: none;
     padding: 5px;
     font-family: Roboto;
     font-size: 16px;
@@ -56,31 +52,27 @@
     padding: 12px 17px 12px 17px;
 }
 
-.textArea::placeholder
-{
+.textArea::placeholder {
     font-family: Roboto, sans-serif;
     font-size: 12px;
     line-height: 16px;
 }
 
-.showErrorText
-{
+.showErrorText {
     font-family: Roboto, sans-serif;
-    color: #F12828;;
+    color: #F12828;
+    ;
     font-size: 12px;
     line-height: 16px;
     margin: 4px 0 0 0;
     width: 35%;
 }
 
-.hideErrorText
-{
+.hideErrorText {
     display: none;
 }
 
-
-.InputName
-{
+.InputName {
     border: 1px solid #999999;
     box-sizing: border-box;
     border-radius: 4px;
@@ -93,16 +85,13 @@
 }
 
 .InputName,
-.errorImage
-::placeholder
-{
+.errorImage::placeholder {
     font-family: Roboto;
     font-size: 16px;
     line-height: 24px;
 }
 
-.InputNumber
-{
+.InputNumber {
     border: 1px solid #999999;
     box-sizing: border-box;
     border-radius: 4px;
@@ -114,8 +103,7 @@
     padding: 12px 17px 12px 17px;
 }
 
-.InputAddress
-{
+.InputAddress {
     border: 1px solid #999999;
     box-sizing: border-box;
     border-radius: 4px;
@@ -127,15 +115,13 @@
     line-height: 24px;
 }
 
-.InputAddress::placeholder
-{
+.InputAddress::placeholder {
     font-family: Roboto;
     font-size: 16px;
     line-height: 24px;
 }
 
-.errorImage
-{
+.errorImage {
     background-image: URL("../image/error.svg");
     background-repeat: no-repeat;
     background-position: right 17px bottom 45%;
@@ -150,8 +136,7 @@
     line-height: 24px;
 }
 
-.errorAddress
-{
+.errorAddress {
     background-image: URL("../image/error.svg");
     background-repeat: no-repeat;
     background-position: right 17px bottom 45%;
@@ -166,8 +151,7 @@
     line-height: 24px;
 }
 
-.paddingLabel
-{
+.paddingLabel {
     font-family: Roboto, sans-serif;
     font-size: 12px;
     line-height: 16px;
@@ -175,77 +159,48 @@
     width: 40%;
 }
 
-@media (max-width: 1032px)
-{
-    .InputName
-    {
+@media (max-width: 1032px) {
+    .InputName {
         width: 100%;
     }
-
-    .InputNumber
-    {
+    .InputNumber {
         width: 100%;
     }
-
-    .InputAddress
-    {
+    .InputAddress {
         width: 100%;
     }
-
     .containerInputName,
-    .containerInputNumber
-    {
+    .containerInputNumber {
         width: 100%;
         height: 96px;
     }
-    .containerInputName
-    {
+    .containerInputName {
         margin-right: 10px;
     }
-
-    .textArea
-    {
+    .textArea {
         height: 112px;
         width: 100%;
     }
-
-    .showErrorText
-    {
+    .showErrorText {
         width: 60%;
     }
-
-    .errorImage
-    {
+    .errorImage {
         height: 48px;
         width: 100%;
     }
 }
 
-
-@media (max-width: 580px)
-{
-    .containerInner
-    {
+@media (max-width: 580px) {
+    .containerInner {
         width: 100%;
         height: 192px;
         display: flex;
         flex-direction: column;
     }
-
-    .paddingLabel
-    {
+    .paddingLabel {
         margin: 0 0 5px 0;
     }
-
-    .containerInputName
-    {
+    .containerInputName {
         margin-right: 0;
     }
 }
-
-
-
-
-
-
-

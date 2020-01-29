@@ -29,10 +29,7 @@ class InputNumber extends React.Component
         {
             this.setState({numberCorrect: false});
             this.firstRender = false;
-            console.log(e.target.value.replace( /\D/g, '').length)
         }
-            
-        
         this.props.checkButton(this.firstRender, 'inputNumber')
     };
 

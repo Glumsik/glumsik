@@ -29,13 +29,32 @@ class InputName extends React.Component
         {
             this.setState(
                 {
-                    textNameCorrect: false,
                     textName: e.target.value
                 });
             this.firstRender = false;
         }
+       
         this.props.checkButton(this.firstRender, 'inputName');
     };
+
+
+    changeNameBlur = (e) =>
+    {
+        if((/^[A-ZА-ЯЁ\s-]+$/i).test(e.target.value) === true || e.target.value.length === 0)
+        {
+            this.setState(
+                {
+                    textNameCorrect: true,
+                });
+        }
+        else
+        {
+            this.setState(
+                {
+                    textNameCorrect: false,
+                });
+        }
+    }
 
 
     render()
@@ -47,7 +66,7 @@ class InputName extends React.Component
         return (
             <div className="containerInputName">
                 <label className="paddingLabel" htmlFor="InputName">ФИО</label>
-                <input id="InputName" className={showError ? "InputName" : "errorImage"} value={textName} placeholder="Только кириллица" onChange={(e) => this.changeName(e)} />
+                <input id="InputName" className={showError ? "InputName" : "errorImage"} value={textName} placeholder="Только кириллица" onChange={(e) => this.changeName(e)} onBlur={(e) => this.changeNameBlur(e)}/>
                 {show}
             </div>
         )
